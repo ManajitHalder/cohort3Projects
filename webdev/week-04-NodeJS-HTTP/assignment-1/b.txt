@@ -1,0 +1,3 @@
+IPFS is a decentralized web protocol.
+Make you incredibly solid at building and deploying Web apps.
+That lets the user specify a file path and the nodejs process counts the number of words inside it.
