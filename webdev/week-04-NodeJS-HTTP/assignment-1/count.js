@@ -12,18 +12,20 @@ program
 program.command('count')
     .description('Counts the number of words in a file')
     .argument('<file>', 'file containing some text')
-    .option('--lines', 'count the number of lines in a file')
+    .option('-l, --lines', 'count the number of lines in a file')
     .action((str, options) => {
         fs.readFile(str, "utf-8", (err, data) => {
             if (err) {
                 console.error(`Error reading file ${err.message}`);
                 process.exit(1);
             } else if (options.lines) {
-                const lines = data.split('\n')
-                console.log(lines.length);
+                const linesCount = data.split('\n').filter(line => line.trim() !== '').length;
+                console.log(`line count: ${linesCount}`)
+                console.log(linesCount);
             } else {
                 const words = data.trim().split(/\s+/)
-                console.log(words.length);
+                // console.log(`word count: ${words.length}`);
+                console.log(words.length)
             }
         })
     })
