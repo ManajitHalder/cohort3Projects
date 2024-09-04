@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sum Server</title>
+    </head>
+
+    <body>
+        <input id="input1" type="text" placeholder="first number">
+        <input id="input2" type="text" placeholder="second number">
+
+        <button onclick="sendRequest()">Sum</button>
+
+        <script>
+            function sendRequest() {
+                fetch("https://localhost:3000/sum", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        a: document.getElementById('input1').value,
+                        b: document.getElementById('input2').value
+                    })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error', error))
+            }
+        </script>
+    </body>
+
+</html>
