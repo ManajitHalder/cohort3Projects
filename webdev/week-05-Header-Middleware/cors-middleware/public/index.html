@@ -11,17 +11,23 @@
         <button onclick="sendRequest()">Sum</button>
 
         <script>
-            function sendRequest() {
-                fetch("https://localhost:3000/sum", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        a: document.getElementById('input1').value,
-                        b: document.getElementById('input2').value
-                    })
-                })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error', error))
+            async function sendRequest() {
+                try { 
+                    const response = await fetch("http://localhost:3000/sum", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                    },
+                        body: JSON.stringify({
+                            a: document.getElementById('input1').value,
+                            b: document.getElementById('input2').value
+                        })
+                    });
+                    const data = await response.json();
+                    console.log(data);
+                } catch (error) {
+                    console.error('Error', error);
+                }
             }
         </script>
     </body>
