@@ -1,0 +1,49 @@
+body {
+    background-color: #828587;
+    color: black;
+}
+
+.todosTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: black;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.todosStyle {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    background-color: #EDEDED;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+.todos-separator {
+    padding-bottom: 5px;
+}
+
+
+.todos-input {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-inline: 450px;
+}
+
+.add-button {
+    padding: 7px;
+    padding-inline: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-input {
+    padding: 10px;
+    width: 390px;
+    border-radius: 5px;
+}
